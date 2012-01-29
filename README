@@ -1,0 +1,3 @@
+A small tool to convert function lists from IDA to C/C++ header file with #define's for the functions and their addresses.
+
+To use it, select the functions from IDA, copy and paste them into a text file, and run this program on the text file. The output file will be <Input File Name>.hpp.
