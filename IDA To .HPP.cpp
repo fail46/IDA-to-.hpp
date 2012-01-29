@@ -35,14 +35,14 @@ int __cdecl main (int ArgCount, char* Args[])
 	{
 		string Line;
 		getline(Input, Line);
-		if(Line.find("sub_") != Line.npos)
+		if(Line.find("sub_") != Line.npos || Line.find("(") != Line.npos)
 		{
 			continue;
 		}
 
 		string FunctionName (Line.substr(0, Line.find(" ")));
 		string Address (Line.substr(Line.find(".text ") + 6, 8));
-		Output << "#define " << FunctionName << " 0x" << Address << "\n";
+		Output << "#define " << FunctionName << " 0x" << Address << " - ModuleBase\n";
 	}
 
 	cout << "Finished. Output is in: " << OutputFileName << std::endl;
